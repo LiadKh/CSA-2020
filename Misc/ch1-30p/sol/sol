@@ -1,0 +1,3 @@
+xortool-xor -f xor-with-xor.bin -s xor > binary_xored.bin
+
+Then run script
