@@ -1,0 +1,3 @@
+ffmpeg -i Can_You_See_It.mp4 ./frames/image-%d.jpeg
+
+ls -1 ./frames/ | wc -
