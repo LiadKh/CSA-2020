@@ -1,0 +1,21 @@
+foremost -i Fix_me.doc 
+
+zsteg output/png 00000067.png
+
+result:
+
+
+imagedata           .. file: Apple DiskCopy 4.2 image \376, 16777472 bytes, GCR CLV dsdd (800k), 0xff format
+b1,rgb,lsb,xy       .. text: "48:UTFOQmUxTjBNemxoVGpCZklXNWZaREJqWHpGelgwNHhZek45"
+b2,rgb,msb,xy       .. text: "jUUUUUUUUUUU"
+b2,bgr,msb,xy       .. text: "jUUUUUUUUUUU"
+b4,r,msb,xy         .. text: "{wwwwwww"
+b4,g,msb,xy         .. text: "{wwwwwww"
+b4,b,msb,xy         .. file: MPEG ADTS, layer I, v2, 112 kbps, 24 kHz, JntStereo
+
+
+use https://gchq.github.io/CyberChef/ to decode from base64 UTFOQmUxTjBNemxoVGpCZklXNWZaREJqWHpGelgwNHhZek45
+
+get Q1NBe1N0MzlhTjBfIW5fZDBjXzFzX04xYzN9
+
+and decode again 

@@ -1,0 +1,26 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Wed Aug 26 12:19:47 2020
+Invocation: foremost -i Fix_me.doc 
+Output directory: /home/liad/Projects/CheckPoint/CSA/Misc/ch3-50p/output
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: Fix_me.doc
+Start: Wed Aug 26 12:19:47 2020
+Length: 87 KB (89088 bytes)
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+0:	00000125.zip 	       3 KB 	      64242 	 
+1:	00000067.png 	      19 KB 	      34401 	  (105 x 160)
+2:	00000106.png 	      156 B 	      54519 	  (15 x 15)
+Finish: Wed Aug 26 12:19:47 2020
+
+3 FILES EXTRACTED
+	
+zip:= 1
+png:= 2
+------------------------------------------------------------------
+
+Foremost finished at Wed Aug 26 12:19:47 2020
