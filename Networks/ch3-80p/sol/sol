@@ -1,0 +1,43 @@
+socks protocol
+
+version 5 
+
+follow tcp stream -> view as RAW
+
+found that last 4 bytes are checksum with crc32
+
+5a01fedd749c2e -> 5a01fe dd749c2e
+
+There are 2 conversions of socks
+
+first vs second (only 2 first packets)
+
+first								second
+
+5a01fedd749c2e							5a01fedd749c2e
+5afe2c91605e14c8b11b						5afe67a6f193f4769864
+5a2cd2331fa90bb96a						5a67e5a2d249b59015
+
+
+first line is the same
+There are version 5a than (fe - server say ok) after is the protocal (2c vs 67) and 6bytes and checksum
+
+6bytes is 3 letters 
+
+91605e ^ d2331f = 43 53 41 (= CSA) first 
+a6f193 ^ e5a2d2 = 43 53 41 (= CSA) second
+
+
+send request
+
+get response
+
+xor with csa the 3-5 bytes (on response)
+
+add vesrion + byte #2 from response + xored from last step + checksum and send (check sum with crc32 for this message)
+
+
+send and get flag
+
+in the flag image serach csa
+
