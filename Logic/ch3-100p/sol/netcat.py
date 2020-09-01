@@ -5,7 +5,6 @@ class Netcat:
     file_name = "sol.txt"
 
     def __init__(self, ip, port):
-        Netcat.write_to_file("////////////////////////////////////////////////////////////////////////////////////")
         Netcat.write_to_file("staring")
 
         self.buff = ""

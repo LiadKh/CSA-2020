@@ -51,6 +51,7 @@ function _f0(_p1, _p0) {
       // (_p0[_g8] % _g9 == 0)==
       !(4 - _g7)
     ) {
+      console.log(_g8,_g9)
       let temp = map.get(_g8);
       if (temp !== undefined) map.set(_g8, temp * _g9);
       else map.set(_g8, _g9);

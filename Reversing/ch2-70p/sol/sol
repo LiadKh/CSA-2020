@@ -1,0 +1,14 @@
+the enigma is reset every 26 (english letters)
+
+so we send "AAAAAAAAAA" in order to reset the enigma at GET-SECRET-DATA
+
+we get the GET-SECRET-DATA enc so we need to reset the enigma again so we send "A"
+
+we get the flag enc
+
+need to rotate the enigma every time for letter check
+
+
+and we get where the chars in the wanted index
+
+
