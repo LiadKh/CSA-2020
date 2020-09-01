@@ -1,0 +1,10 @@
+clone the repo of keen from github
+
+compare the folders
+
+copy all the changs
+
+
+gcc main.c from_asm_file.c -o main.o
+
+
