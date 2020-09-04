@@ -1,0 +1,27 @@
+void
+US_DisplayHighScores(int which)
+{
+	char		buffer[16],*str;
+	word		i,
+				w,h,
+				x,y;
+	HighScore	*s;
+
+	US_CenterWindow(30,MaxScores + (MaxScores / 2));
+
+	x = WindowX + (WindowW / 2);
+	US_Print(" Name");
+	PrintX = x + 20;
+	US_Print("Score");
+	PrintX = x + 60;
+	US_Print("Done\n\n");
+	PrintY -= 3;
+
+	for (i = WindowX;i < WindowX + WindowW;i += 8)
+		VWB_DrawTile8M(i,WindowY + 8,10);
+	VWB_DrawTile8M(WindowX - 8,WindowY + 8,9);
+	VWB_DrawTile8M(WindowX + WindowW,WindowY + 8,11);
+
+	// for (i=0;i<24;i=i+8) {
+	// 	memcpy(Scores[i/8].name,res+i,8);
+	// }
